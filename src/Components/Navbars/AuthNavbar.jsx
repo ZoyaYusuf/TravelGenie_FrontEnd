@@ -1,11 +1,12 @@
 import './Navbar.css'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useUser } from "../UserContext";
 const API = import.meta.env.VITE_BACKEND_URL;
 
 export default function AuthNavbar({ isLoggedIn, setIsLoggedIn }){ 
+    const navigate = useNavigate(); 
     const { userData, setUserData } = useUser();
     const { id } = useParams();
     const [click, setClick] = useState(false);
@@ -22,7 +23,7 @@ export default function AuthNavbar({ isLoggedIn, setIsLoggedIn }){
     localStorage.removeItem("userData");
     setUserData({ userId: null, email: "", username: "" });
     setIsLoggedIn(false);
-    window.location.href = "/Login";   // Redirect after logout
+    navigate("/login");  // Redirect after logout
     }
     return(
         <> 
