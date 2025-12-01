@@ -20,6 +20,8 @@ export default function Login() {
                 body: JSON.stringify(values),
                 credentials: "include"
             });
+
+            console.log("user data in login as values", values) 
  
             const data = await res.json();
 
