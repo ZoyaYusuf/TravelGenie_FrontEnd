@@ -21,7 +21,7 @@ export default function Features() {
         <div className="feature-row">
           <div className="feature-text">
             <div className="icon-box violet">
-              <img src="/assets/calendar.gif" alt="Schedule Icon" />
+              <img src="/calendar.gif" alt="Schedule Icon" />
               {/* <i class="fa-solid fa-hexagon-nodes"></i> */}
             </div>
             <h3>Create Itinerary</h3>
@@ -44,7 +44,7 @@ export default function Features() {
 
           <div className="feature-text order-right">
             <div className="icon-box green">
-              <img src="/assets/ai.gif" alt="AI Recommendation Icon" /> 
+              <img src="/ai.gif" alt="AI Recommendation Icon" /> 
             </div>
             <h3>AI Recommendation</h3>
 <p>Get smart suggestions for places to visit in any city you choose.</p>
@@ -59,7 +59,7 @@ export default function Features() {
         <div className="feature-row">
           <div className="feature-text">
             <div className="icon-box orange">
-              <img src="/assets/bookmark.gif" alt="Saved Places Icon" /> 
+              <img src="/bookmark.gif" alt="Saved Places Icon" /> 
             </div>
             <h3>Saved Trips</h3>
 <p>Save your complete itinerary once you finish planning.</p>
