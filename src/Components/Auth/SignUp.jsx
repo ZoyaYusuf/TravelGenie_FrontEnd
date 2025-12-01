@@ -4,7 +4,6 @@ import { useStat } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik"; 
 import { useUser } from "../UserContext";
 import { signupSchema } from "/src/validation/validationSchema.js";
-import SignUpImage from "/src/assets/Signup.jpeg"
 import loginImage from "/src/assets/Login.jpeg"
 const API = import.meta.env.VITE_BACKEND_URL;
 
