@@ -3,6 +3,9 @@ import "./Features.css";
 import ai from "/src/assets/ai.png"; 
 import trip from "/src/assets/trip.png"; 
 import save from "/src/assets/save.png"; 
+import aiGif from "/src/assets/ai.gif"; 
+import bookGif from "/src/assets/bookmark.gif"; 
+import calGif from "/src/assets/calendar.gif"; 
 
 export default function Features() {
   return (
@@ -21,7 +24,7 @@ export default function Features() {
         <div className="feature-row">
           <div className="feature-text">
             <div className="icon-box violet">
-              <img src="/calendar.gif" alt="Schedule Icon" />
+              <img src={calGif} alt="Schedule Icon" />
               {/* <i class="fa-solid fa-hexagon-nodes"></i> */}
             </div>
             <h3>Create Itinerary</h3>
@@ -44,7 +47,7 @@ export default function Features() {
 
           <div className="feature-text order-right">
             <div className="icon-box green">
-              <img src="/ai.gif" alt="AI Recommendation Icon" /> 
+              <img src={aiGif} alt="AI Recommendation Icon" /> 
             </div>
             <h3>AI Recommendation</h3>
 <p>Get smart suggestions for places to visit in any city you choose.</p>
@@ -59,7 +62,7 @@ export default function Features() {
         <div className="feature-row">
           <div className="feature-text">
             <div className="icon-box orange">
-              <img src="/bookmark.gif" alt="Saved Places Icon" /> 
+              <img src={bookGif} alt="Saved Places Icon" /> 
             </div>
             <h3>Saved Trips</h3>
 <p>Save your complete itinerary once you finish planning.</p>
