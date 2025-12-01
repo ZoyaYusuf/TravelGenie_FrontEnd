@@ -1,0 +1,33 @@
+.footer {
+  width: 100%;
+  padding: 40px 20px 20px;
+  background: linear-gradient(135deg, #f3f0ff, #ffffff);
+  border-top: 1px solid #e5e1ff;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.footer-brand {
+  margin-bottom: 15px;
+}
+
+.footer-brand h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #6246ea;   /* soft purple to match your theme */
+  font-weight: 700;
+}
+
+.footer-brand p {
+  margin-top: 4px;
+  font-size: 15px;
+  color: #666;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* fully responsive by default since everything is centered */

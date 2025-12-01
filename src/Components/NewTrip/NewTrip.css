@@ -1,0 +1,310 @@
+.newTrip-body {   
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+.newTrip-body .card { 
+  width: 35%;
+  height: 600px; 
+  border-radius: 16px; 
+  padding: 15px 20px;  
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: fadeIn 0.8s ease;
+  border: 1px solid #2d1370 !important;
+  overflow: scroll; 
+  display: grid;
+  grid-template-rows: repeat(6, 90px); 
+  gap: 10px;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.newTrip-body .label {
+  text-align: center;
+  margin-bottom: 22px; 
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 700;
+  background: var(--gradient); 
+  letter-spacing: 0.5px;
+  color: #120337;
+} 
+
+.field{
+  display:flex;
+  flex-direction:column;
+  width: 100%;
+}
+
+.trip-Input[type="text"], .trip-Input[type="date"], .trip-Input[type="number"]{
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0 14px;
+  font-size: 15px; 
+  transition: all 0.3s ease;
+  color: #1c1c28; 
+  background-color: #fff;
+  margin: 10px; 
+}
+
+.trip-Input[type="date"]{
+  width: 80%;
+}
+ 
+input:focus {
+  background: white !important; 
+  box-shadow: 0 0 0 4px rgba(106,156,251,0.15);
+  outline: none;
+}
+
+.row {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px;
+}
+
+.col-2 {
+  flex: 1;
+}
+
+/* .create-wrap {
+  display: flex;
+  justify-content: center;  
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 50px; 
+  border: 1px solid black;
+} */
+
+.create { 
+  width: 100%;
+  height: 50px;
+  color: white;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 12px rgba(106,156,251,0.25);
+  background-color: #6b46c1; 
+  margin-top: 160px; 
+}
+
+.create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(106,156,251,0.3);
+  background-color: #120337;
+
+}
+
+button .create:active {
+  transform: scale(0.98);
+}
+
+.cover-section{
+  height: 250px; 
+  display: flex;
+  flex-direction: column; 
+}  
+
+.coverImg{
+  margin: 0;
+  height: 150px !important; 
+  object-fit: cover;
+  border-radius: 5px;
+}
+ 
+input[type="file"] {
+  display: none;
+}
+   
+/* Preview box */
+.cover-preview-box {
+  width: 100%;
+  max-width: 500px;
+  height: 180px;
+  border-radius: 14px;  
+  background: #f8f3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.cover-preview-box:hover {
+  border-color: #8b5cf6;
+}
+
+/* Preview Image */
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Actions */
+.cover-actions {
+  margin-top: 10px;
+}
+
+/* Upload Button */
+.upload-btn { 
+  background-color: #b497ff;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+   
+
+/* --------------------------------------------
+   RESPONSIVE FORM
+   -------------------------------------------- */
+
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+
+.newTrip-body .card  {
+width: 95%;
+height: 700px;
+padding: 20px;
+  }
+
+.newTrip-body .label  {
+font-size: 24px;
+  margin-top: 100px;
+ 
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+height: 40px;
+font-size: 14px;
+padding: 0 10px;
+  }
+
+  /* Make all "row" fields stacked instead of inline */
+  .row { 
+grid-template-columns: 1fr;
+gap: 12px;
+  }
+
+  /* Make inputs smaller */
+  .col-2 {
+flex: none;
+width: 100%;
+  }
+
+  .field label {
+font-size: 11px;
+  }
+
+  .cover-upload {
+height: 80px;
+font-size: 13px;
+  }
+ 
+  button.create {
+padding: 9px 20px;
+font-size: 14px;
+  }
+
+  .create{
+    margin-top: 230px;
+  }
+
+  .cover-section{
+    margin-top: 100px;
+  }
+  /* Cover preview responsive */
+  .cover-preview {
+max-width: 100%;
+  }
+
+  /* Modal responsive */
+  .gallery-content {
+padding: 1.2rem;
+  }
+
+  .gallery-grid {
+grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+gap: 0.7rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+
+.newTrip-body .card  {
+width: 80%;
+padding: 22px;
+  }
+ 
+  /* Make row into 2 columns instead of 1 */
+  .row { 
+grid-template-columns: 1fr;
+gap: 14px;
+  }
+
+ .create{
+    margin-top: 250px;
+  }
+  .cover-section{
+    margin-top: 100px;
+  }
+
+.newTrip-body .label  {
+font-size: 24px;
+  margin-top: 100px;
+ 
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+height: 44px;
+font-size: 15px;
+  }
+
+  input[type="date"] {
+      width: 100%;
+  }
+  .cover-preview {
+max-width: 90%;
+  }
+ 
+}
+}
+
+@media (max-width: 1250px) {
+
+.newTrip-body .label  { 
+  margin-top: 100px;
+  }
+
+}

@@ -1,0 +1,61 @@
+.hero-wrapper {
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+  max-height: 75vh; /* default for large screens */
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills space nicely without stretching */
+}
+
+/* 4k & large screens */
+@media (min-width: 1600px) {
+  .hero-wrapper {
+    max-height: 95vh;
+  }
+}
+
+/* Laptops */
+@media (max-width: 1440px) {
+  .hero-wrapper {
+    max-height: 90vh;
+  }
+}
+
+/* Laptop 1024px */
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    max-height: 60vh;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    max-height: 50vh;
+  }
+}
+
+/* Mobile L - 425px */
+@media (max-width: 425px) {
+  .hero-wrapper {
+    max-height: 40vh;
+  }
+}
+
+/* Mobile M - 375px */
+@media (max-width: 375px) {
+  .hero-wrapper {
+    max-height: 35vh;
+  }
+}
+
+/* Mobile S - 320px */
+@media (max-width: 320px) {
+  .hero-wrapper {
+    max-height: 30vh;
+  }
+}

@@ -1,0 +1,181 @@
+.schedule-container {
+    width: 100%; 
+    box-sizing: border-box;
+  overflow: scroll;
+
+}
+
+.itinerary-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.itinerary-header {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.itinerary-header h2 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* --- Day and Slots Layout --- */
+
+.itinerary-days {
+    padding: 20px;
+}
+
+.day {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.day h3 {
+    color: #3f51b5; /* Accent color */
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
+.slots {
+    /* DEFAULT (Desktop/Tablet) Layout: 2x2 grid */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* --- Individual Slot Styling --- */
+
+.slot {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    /* Set a fixed minimum height based on 3 vertical items + padding/title height */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slot-title {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.slot-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+/* --- Place Item (Pill) Styling --- */
+
+.place-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid #3f51b5; /* Accent border for visual hierarchy */
+    border-radius: 4px;
+    transition: box-shadow 0.2s;
+    min-height: 40px;
+}
+
+.place-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.place-item input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: #333;
+    padding: 5px;
+    margin-right: 10px;
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.del-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #e57373; /* Soft red for delete */
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.del-btn:hover {
+    opacity: 1;
+    color: #d32f2f; /* Darker red on hover */
+    transform: scale(1.1);
+}
+
+/* --- Aesthetic Fix: Placeholder for Empty Slots --- */
+
+.no-place-added {
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    margin: auto 0;
+}
+
+/* --- Save Button Styling (Kept simple) --- */
+
+.saveSchedule {
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.saveSchedule:hover {
+    background-color: #303f9f;
+}
+ 
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 10px;
+    }
+
+    .slots { 
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .slot {
+        padding: 10px;
+        min-height: 150px;
+    }
+    
+    .day h3 {
+        font-size: 1.1rem;
+    }
+} 

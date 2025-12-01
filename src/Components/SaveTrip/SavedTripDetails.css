@@ -1,0 +1,185 @@
+/* 🌅 General Page Layout */
+
+.savedTrip-body{
+  display: flex;
+  flex-direction: row;
+}
+
+.trip-details {
+  width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  transition: all 0.3s ease; 
+  margin-top: 90px;
+}
+
+/* 🏖️ Title & Main Info */
+.trip-details h2 {
+  font-size: 2rem;
+  font-weight: 600;  
+  color: #3e6af8;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.trip-details p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.trip-details p strong {
+  color: #222;
+}
+
+/* ✨ Schedule Header */
+.trip-details h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #444;
+  border-left: 4px solid #4f7efc;
+  padding-left: 10px;
+}
+
+/* 🗓️ Schedule Block */
+.schedule-block {
+  background: #f9faff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(79, 126, 252, 0.15);
+  box-shadow: 0 3px 8px rgba(79, 126, 252, 0.05);
+}
+
+/* 🌞 Day Sections */
+.day-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.2rem;
+  border-left: 5px solid #7b65ff;
+  transition: transform 0.2s ease;
+}
+
+.day-section:hover {
+  transform: translateY(-3px);
+}
+
+/* 🗓️ Day Title */
+.day-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3f51b5;
+  margin-bottom: 0.6rem;
+}
+
+/* ☀️ Slot Styles */
+.slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.slots > div {
+  background: #f4f6ff;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(63, 81, 181, 0.1);
+  box-shadow: 0 2px 5px rgba(63, 81, 181, 0.05);
+  transition: all 0.2s ease;
+}
+
+.slots > div:hover {
+  background: #eef1ff;
+}
+
+/* 🌤️ Slot Heading */
+.slots strong {
+  display: block;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* 📍 Place List */
+.slots ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.slots ul li {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 3px 0;
+}
+
+/* 🚫 No Places Text */
+.slots p {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* 🔙 Back Button (optional) */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #4f7efc, #7b65ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #3e6af8, #6a4eff);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(79, 126, 252, 0.2);
+}
+
+.pdfBtn{
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-top: 90px;
+  margin-left: 30px;
+  display: block;
+  background-color: #3e6af8;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pdfBtn:hover{
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: 1px solid  #3e6af8;
+
+}
+
+@media screen and (max-width: 960px){
+.savedTrip-body{ 
+  flex-direction: column;
+}
+
+
+}

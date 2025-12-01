@@ -1,0 +1,177 @@
+.login-body, .sign-body { 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  /* border: 1px solid red; */
+}
+
+.login-container, .sign-container {
+  /* width: 70%px; */
+  height: 550px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  overflow: hidden;
+  animation: fadeIn 1.5s 0s alternate;
+
+}
+ 
+
+.form-box{ 
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap: 20px;
+
+} 
+
+.form-box .loginInput, .form-box .signUpInput{
+  border: 1px solid #3e6af8;
+  padding: 15px;
+  margin: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+ 
+.login-container .loginImage img{ 
+  width: 100%;
+  height: 550px !important; 
+  /* border: 1px solid rgb(0, 255, 89); */
+
+}
+
+.sign-container .signupImage img{
+  width: 100%;
+  height: 550px !important; 
+
+} 
+
+.loginBtn, .signUpBtn { 
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 15px;  
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  background-color: #3e6af8;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+.loginBtn{
+  margin-bottom: 20px;
+
+}
+
+.loginBtn:hover,.signUpBtn:hover {
+  opacity: 0.9;
+  background-color: #7ea0e0;
+
+}
+
+.switch-link-login a {
+  margin-top: 30px !important; 
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+} 
+
+.switch-link-signUp a{ 
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  
+}
+
+.server-error {
+  color: #d9534f;
+  background: #ffe6e6;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Error border */
+.input-error {
+  border: 2px solid #e74c3c !important;
+  background: #fff5f5;
+  position: relative;
+}
+
+/* Error icon (small red "i") */
+.input-error::after {
+  content: "!";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background: #e74c3c;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Error text below input */
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* SERVER ERROR BOX */
+.server-error {
+  color: #d9534f;
+  background: #ffe6e6;
+  padding: 10px;
+  border-left: 4px solid #d9534f;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* SUCCESS ALERT */
+.success-alert {
+  background: #e9ffea;
+  color: #1b8f35;
+  padding: 10px 14px;
+  border-left: 4px solid #1b8f35;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 800px) {
+  
+.login-container, .sign-container { 
+  grid-template-columns: 1fr;   
+}
+ 
+}

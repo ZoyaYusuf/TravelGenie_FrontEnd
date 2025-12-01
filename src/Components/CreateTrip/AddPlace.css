@@ -1,0 +1,231 @@
+/* --- CSS Variables for Consistency --- */
+/* Note: Since :root was disallowed, these colors are used directly. */
+/* Define a few colors based on common standards: */
+/* --primary-blue: #3f51b5; */
+/* --secondary-gray: #f4f4f4; */
+/* --text-dark: #333333; */
+/* --border-light: rgba(0, 0, 0, 0.1); */
+/* --modal-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); */
+
+
+/* --- 1. Modal Backdrop and Positioning --- */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 18, 40, 0.4); /* Slightly darker, cleaner shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 500;
+}
+
+.modal {
+    width: 450px; /* Slightly wider for better layout */
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Modern shadow */
+    border: 1px solid rgba(255, 255, 255, 0.45); /* Subtle white border for depth */
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.5rem; /* Larger, clearer title */
+    color: #333333;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* --- 2. Section and Label Styling --- */
+
+.modal-section {
+    margin-top: 18px;
+}
+
+.label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666; /* Lighter color for label */
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* --- 3. Selected Place Display --- */
+
+.place-display {
+    padding: 10px 15px;
+    background-color: #f8f8f8; /* Light gray background */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.place-name {
+    font-weight: 700;
+    color: #3f51b5; /* Primary blue for emphasis */
+    font-size: 1rem;
+}
+
+/* --- 4. Day Selector --- */
+
+.day-selector-container select {
+    width: 100%;
+    height: 44px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23666666' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+    transition: border-color 0.2s;
+}
+
+.day-selector-container select:focus {
+    border-color: #3f51b5;
+    outline: none;
+}
+
+
+/* --- 5. Slot Options (Buttons) --- */
+
+.slot-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
+.slot-btn {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    background: #f4f4f4; /* Light background for inactive */
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.2s ease;
+    flex-grow: 1; /* Allow small growth */
+    min-width: 100px; /* Ensure buttons don't get too small */
+    width: 150px;
+}
+
+.slot-btn:hover {
+    background: #e6e6e6;
+}
+
+.slot-btn.active {
+    background: #3f51b5; /* Primary blue */
+    color: #fff;
+    border-color: #3f51b5;
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.2);
+    transform: translateY(-1px);
+}
+
+/* --- 6. Action Buttons --- */
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid #cccccc;
+    color: #666;
+}
+
+.btn.secondary:hover {
+    background: #f0f0f0;
+    border-color: #b0b0b0;
+}
+
+.btn.primary {
+    background: #3f51b5; /* Primary blue */
+    color: white;
+    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.3);
+}
+
+.btn.primary:hover {
+    background: #303f9f;
+}
+
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* --- Mobile Responsiveness for Modal --- */
+
+@media (max-width: 500px) {
+    .modal {
+        padding: 18px;
+    }
+    
+    .slot-options {
+        /* Force two buttons per row for better touch targets */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    .slot-btn {
+        flex-grow: unset;
+        min-width: unset;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+
+    .btn.secondary {
+        order: 2; /* Put cancel button below done button on mobile */
+    }
+    
+    .btn.primary {
+        order: 1;
+    }
+}
