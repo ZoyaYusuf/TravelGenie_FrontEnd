@@ -16,8 +16,7 @@ export default function Explore(){
         try{
           await fetch(`${API}/explore/Explore/${userData.userId}`, { 
             method: "GET",
-            headers: { "Content-Type": "application/json" }, 
-            credentials: "include"
+            headers: { "Content-Type": "application/json" },  
           });  
         }catch (error) {
           console.error("Unable to display explore:", error);
