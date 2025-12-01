@@ -24,12 +24,3 @@ logs/
 # OS files
 .DS_Store
 
-# Videos and large assets
-*.mp4
-*.mov
-*.avi
-*.mkv
-
-# Other heavy files
-*.wasm
-*.map
