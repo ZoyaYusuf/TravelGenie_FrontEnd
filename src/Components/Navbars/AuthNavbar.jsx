@@ -21,6 +21,7 @@ export default function AuthNavbar({ isLoggedIn, setIsLoggedIn }){
         credentials: "include"
     });
     localStorage.removeItem("userData");
+    localStorage.removeItem("token");  
     setUserData({ userId: null, email: "", username: "" });
     setIsLoggedIn(false);
     navigate("/login");  // Redirect after logout

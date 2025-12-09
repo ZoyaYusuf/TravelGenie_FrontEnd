@@ -10,8 +10,7 @@ const API = import.meta.env.VITE_BACKEND_URL;
 
 export default function Login() { 
     const navigate = useNavigate(); 
-    const { userData, setUserData } = useUser();  //gobal var / context --user
-
+    const { userData, setUserData } = useUser();  //gobal var / context --user 
     const handleSubmit = async (values, { setSubmitting, setStatus }) => {
         try { 
             const res = await fetch(`${API}/auth/login`, {
@@ -29,15 +28,15 @@ export default function Login() {
                 setStatus(data.message || "Login failed");
                 return;
             }
- 
-            setUserData(prev => ({
-            ...prev,
-            name: data.user.name,
-            userId: data.user.userId,
-            email: data.user.email
-            }));
 
             if (data.token) { 
+                localStorage.setItem("token", data.token); 
+                setUserData(prev => ({
+                ...prev,
+                name: data.user.name,
+                userId: data.user.userId,
+                email: data.user.email
+            }));
                 navigate(`/Explore/${data.user.userId}`);
 
             } else {
