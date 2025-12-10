@@ -4,6 +4,7 @@ import'../CreateTrip/Places.css';
 import { useParams } from "react-router-dom";
 import { useTrip } from "../TripContext"; 
 const API = import.meta.env.VITE_BACKEND_URL;
+const token = localStorage.getItem("token");
 
 export default function Places({setIsOpen, city, setSelectedPlaces}) {
   const { id } = useParams();
@@ -41,7 +42,7 @@ export default function Places({setIsOpen, city, setSelectedPlaces}) {
     try{
       const res = await fetch(`${API}/new/CreateTrip/${tripData.tripId}`, { //Calling /CreateTrip Route
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
       body: JSON.stringify({city}),  //city name is passed in the body of the URL
        
     });

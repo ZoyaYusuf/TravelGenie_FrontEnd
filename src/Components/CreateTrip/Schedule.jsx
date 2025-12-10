@@ -10,6 +10,7 @@ export default function Schedule({ tripId, tripName, days, startDate, scheduleDa
   const dayArray = Array.from({ length: days }, (_, i) => i + 1); //No of days jo hmne choose kiye usko Array ki form me save kia
   const slotTypes = ['morning', 'afternoon', 'evening', 'night'];
   const { userData, setUserData } = useUser();    
+  const token = localStorage.getItem("token");
    
   const saveSchedule = async(e) =>{
     e.preventDefault();
@@ -53,7 +54,7 @@ export default function Schedule({ tripId, tripName, days, startDate, scheduleDa
     try{  
         const res = await fetch(`${API}/Schedule/CreateTrip/:id`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" , "Authorization": `Bearer ${token}`  },
         body: JSON.stringify(ScheduleTrip),
          
         }); 
