@@ -23,7 +23,7 @@ export default function Places({setIsOpen, city, setSelectedPlaces}) {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify({city: city}),  //city name is passed in the body of the URL
-  //     credentials: "include"
+  //      
   //   });
   //   const data = await res.json(); //Response of the URL in json
   //   setPlaces(data);
@@ -43,7 +43,7 @@ export default function Places({setIsOpen, city, setSelectedPlaces}) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({city}),  //city name is passed in the body of the URL
-      credentials: "include"
+       
     });
     const data = await res.json(); //Response of the URL in json
     setPlaces(data);

@@ -55,7 +55,7 @@ export default function Schedule({ tripId, tripName, days, startDate, scheduleDa
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(ScheduleTrip),
-        credentials: "include"
+         
         }); 
         console.log("schedule saved", ScheduleTrip);
         localStorage.removeItem(`scheduleData_${tripId}`);

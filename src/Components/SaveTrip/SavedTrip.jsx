@@ -36,8 +36,7 @@ const deleteSavedTrip = async (tripId, e) => {
     const res = await fetch(
       `${API}/saved/savedTrip/${userData.userId}/${tripId}`,
       {
-        method: "DELETE",
-        credentials: "include",
+        method: "DELETE", 
       }
     );
 
@@ -64,7 +63,7 @@ const deleteSavedTrip = async (tripId, e) => {
     useEffect(() => { 
       const fetchTrips = async () => {
         try {
-          const res = await fetch(`${API}/saved/savedTrip/${userData.userId}`, { credentials: "include" });
+          const res = await fetch(`${API}/saved/savedTrip/${userData.userId}`, {   });
           const data = await res.json();
           setTrips(data);
         } catch (err) {

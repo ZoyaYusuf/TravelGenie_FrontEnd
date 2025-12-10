@@ -4,8 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginSchema } from "/src/validation/validationSchema.js";
 import { useUser } from "../UserContext";
 import loginImage from "/src/assets/Login.jpeg"
-import SignUpImage from "/src/assets/SignUp.jpeg"
-
+import SignUpImage from "/src/assets/SignUp.jpeg" 
 const API = import.meta.env.VITE_BACKEND_URL;
 
 export default function Login() { 
@@ -16,8 +15,7 @@ export default function Login() {
             const res = await fetch(`${API}/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(values),
-                credentials: "include"
+                body: JSON.stringify(values), 
             });
 
             console.log("user data in login as values", values) 
@@ -26,10 +24,13 @@ export default function Login() {
 
              if (!data.user) {
                 setStatus(data.message || "Login failed");
+                console.log("token :", data.token) 
+
                 return;
             }
 
             if (data.token) { 
+                console.log("token available :", data.token) 
                 localStorage.setItem("token", data.token); 
                 setUserData(prev => ({
                 ...prev,

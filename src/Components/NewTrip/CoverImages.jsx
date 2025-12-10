@@ -27,7 +27,6 @@ export default function CoverImages({ setFieldValue }) {
       const res = await fetch(`${API}/uploadCover`, {
         method: "POST",
         body: formData,
-        credentials: "include"
       });
 
       const data = await res.json();

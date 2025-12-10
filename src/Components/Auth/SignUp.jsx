@@ -14,9 +14,8 @@ export default function Signup() {
         try {
             const res = await fetch(`${API}/auth/signup`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(values),
-                credentials: "include"
             });
 
             const data = await res.json();
@@ -26,18 +25,20 @@ export default function Signup() {
                 return;
             }
  
-            setUserData(prev => ({
-            ...prev,
-            name: data.user.name,
-            userId: data.user.userId,
-            email: data.user.email
+            if (data.token) { 
+                localStorage.setItem("token", data.token); 
+                setUserData(prev => ({
+                ...prev,
+                name: data.user.name,
+                userId: data.user.userId,
+                email: data.user.email
             }));
+                navigate(`/Explore/${data.user.userId}`);
 
-            if (res.ok) {
-            navigate(`/Explore/${data.user.userId}`);  
-            } else {
+            }else {
                 setStatus(data.message || "Login failed");
             }
+            
         } catch (err) {
             setStatus("Something went wrong");
         } finally {

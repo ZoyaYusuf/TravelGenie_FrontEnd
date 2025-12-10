@@ -9,9 +9,7 @@ export default function PublicRoute({ children }) {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-            const res = await fetch(`${API}/auth/check`, {
-                    credentials: "include"
-                });
+            const res = await fetch(`${API}/auth/check`);
                 const data = await res.json();
                 setIsAuth(data.loggedIn === true);
             } catch {

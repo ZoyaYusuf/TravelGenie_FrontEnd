@@ -17,8 +17,7 @@ export default function AuthNavbar({ isLoggedIn, setIsLoggedIn }){
 
     async function handleLogout() {
     await fetch(`${API}/logout`, {
-        method: "POST",
-        credentials: "include"
+        method: "POST"
     });
     localStorage.removeItem("userData");
     localStorage.removeItem("token");  

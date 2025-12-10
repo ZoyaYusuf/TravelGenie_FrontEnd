@@ -12,9 +12,7 @@ export default function Navbar(){
 
     // Check auth on mount
     useEffect(() => {
-        fetch(`${API}/auth/check`, {
-            credentials: "include"
-        })
+        fetch(`${API}/auth/check`)
         .then(res => res.json())
         .then(data => setIsLoggedIn(data.loggedIn || false))
         .catch(() => setIsLoggedIn(false));

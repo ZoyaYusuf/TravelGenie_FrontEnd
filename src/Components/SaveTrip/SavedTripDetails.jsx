@@ -15,7 +15,7 @@ export default function SavedTripDetails() {
   useEffect(() => {
     const fetchTrip = async () => { 
       try {
-        const res = await fetch(`${API}/saved/SavedTrip/${userData.userId}/${tripId}`, {credentials: "include"});
+        const res = await fetch(`${API}/saved/SavedTrip/${userData.userId}/${tripId}`);
         const data = await res.json();
         setTrip(data);
       } catch (err) {
