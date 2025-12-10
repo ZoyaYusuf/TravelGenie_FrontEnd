@@ -39,7 +39,7 @@ export default function Explore(){
               </div>
           </div>
 
-          {/* <SavedTrip/> */}
+          <SavedTrip/>
         </div>
         </>
     )
