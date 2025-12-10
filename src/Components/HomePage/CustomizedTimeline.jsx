@@ -46,25 +46,7 @@ export default function TravelHighlightsTimeline() {
             Get personalized travel suggestions using AI
           </Typography>
         </TimelineContent>
-      </TimelineItem>
-
-      {/* Blogs */}
-      <TimelineItem sx={{ minHeight: 120 }}>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot color="success">
-            <MenuBookIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant="h6">Blogs</Typography>
-          <Typography variant="subtitle2" color="text.secondary">
-            Read travel stories, tips, and guides from other explorers
-          </Typography>
-        </TimelineContent>
-      </TimelineItem>
-
+      </TimelineItem> 
       {/* Get All Places Saved */}
       <TimelineItem sx={{ minHeight: 120 }}>
         <TimelineSeparator>
