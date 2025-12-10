@@ -24,6 +24,7 @@
   flex: 1 1 45%;
   min-width: 250px;
   height: 100% !important;
+  border : 1px solid #555;
 }
 
 .feature-text h3 {
