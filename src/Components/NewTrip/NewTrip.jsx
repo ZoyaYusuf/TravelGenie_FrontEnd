@@ -34,7 +34,8 @@ export default function NewTrip(){
     }
     const res = await fetch(`${API}/Create/newTrip/${userData.userId}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}`  },
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
       body: JSON.stringify(values),
     });
 

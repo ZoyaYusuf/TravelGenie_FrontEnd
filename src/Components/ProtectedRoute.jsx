@@ -1,7 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-const API = import.meta.env.VITE_BACKEND_URL;
-const token = localStorage.getItem("token");
+const API = import.meta.env.VITE_BACKEND_URL; 
 
 export default function ProtectedRoute() {
     const [loading, setLoading] = useState(true);
@@ -12,7 +11,8 @@ export default function ProtectedRoute() {
             try {
                 const res = await fetch(`${API}/auth/check`, {
                     method: "GET",
-                    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },  
+                    headers: { "Content-Type": "application/json"},
+                    credentials: "include",  
                 });
 
                 const data = await res.json();

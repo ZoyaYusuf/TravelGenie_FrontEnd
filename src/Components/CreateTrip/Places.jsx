@@ -42,7 +42,8 @@ export default function Places({setIsOpen, city, setSelectedPlaces}) {
     try{
       const res = await fetch(`${API}/new/CreateTrip/${tripData.tripId}`, { //Calling /CreateTrip Route
       method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
+      headers: { "Content-Type": "application/json"},
+      credentials: "include",
       body: JSON.stringify({city}),  //city name is passed in the body of the URL
        
     });

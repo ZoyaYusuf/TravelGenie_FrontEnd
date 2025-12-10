@@ -17,10 +17,10 @@ export default function AuthNavbar({ isLoggedIn, setIsLoggedIn }){
 
     async function handleLogout() {
     await fetch(`${API}/logout`, {
-        method: "POST"
+        method: "POST",
+        credentials: "include"
     });
-    localStorage.removeItem("userData");
-    localStorage.removeItem("token");  
+    localStorage.removeItem("userData"); 
     setUserData({ userId: null, email: "", username: "" });
     setIsLoggedIn(false);
     navigate("/login");  // Redirect after logout

@@ -16,6 +16,8 @@ export default function Login() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(values), 
+                credentials: "include",
+
             });
 
             console.log("user data in login as values", values) 

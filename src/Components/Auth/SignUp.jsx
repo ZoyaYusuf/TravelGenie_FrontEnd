@@ -15,7 +15,9 @@ export default function Signup() {
             const res = await fetch(`${API}/auth/signup`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
+                credentials: "include",
                 body: JSON.stringify(values),
+
             });
 
             const data = await res.json();
@@ -26,14 +28,14 @@ export default function Signup() {
             }
  
             if (data.token) { 
-                localStorage.setItem("token", data.token); 
                 setUserData(prev => ({
                 ...prev,
                 name: data.user.name,
                 userId: data.user.userId,
-                email: data.user.email
+                email: data.user.email 
             }));
-                navigate(`/Explore/${data.user.userId}`);
+            console.log(userData);
+                navigate(`/login`);
 
             }else {
                 setStatus(data.message || "Login failed");

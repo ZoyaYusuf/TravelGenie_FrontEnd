@@ -10,19 +10,11 @@ export default function Navbar() {
     const { userData } = useUser();  
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-
-        if (!token) {
-            setIsLoggedIn(false);
-            return;
-        }
+    useEffect(() => { 
 
         fetch(`${API}/auth/check`, {
             method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
+            credentials: "include"
         })
         .then(res => res.json())
         .then(data => {

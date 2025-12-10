@@ -62,7 +62,7 @@ export default function SavedTripDetails() {
     <div className="savedTrip-body">
       <button onClick={handleDownloadPdf} className="pdfBtn">
             Download PDF 
-            <i class="fa-regular fa-file-pdf"></i>
+            <i className="fa-regular fa-file-pdf"></i>
     </button>
     <div ref={printRef} className="trip-details">
       <h2>{trip.tripName}</h2>

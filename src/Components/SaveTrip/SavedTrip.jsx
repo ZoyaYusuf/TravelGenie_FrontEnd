@@ -3,8 +3,7 @@ import { useState , useEffect } from 'react';
 import { useNavigate } from "react-router-dom"; 
 import { useUser } from "../UserContext";
 import Swal from "sweetalert2";
-const API = import.meta.env.VITE_BACKEND_URL;
-const token = localStorage.getItem("token");
+const API = import.meta.env.VITE_BACKEND_URL; 
 
 export default function savedTrip(){
     const [trips, setTrips] = useState([]);
@@ -37,8 +36,7 @@ const deleteSavedTrip = async (tripId, e) => {
     const res = await fetch(
       `${API}/saved/savedTrip/${userData.userId}/${tripId}`,
       {
-        method: "DELETE", 
-        headers: { "Authorization": `Bearer ${token}`  },
+        method: "DELETE", credentials: "include"
       }
     );
 
@@ -65,7 +63,7 @@ const deleteSavedTrip = async (tripId, e) => {
     useEffect(() => { 
       const fetchTrips = async () => {
         try {
-          const res = await fetch(`${API}/saved/savedTrip/${userData.userId}`, {   });
+          const res = await fetch(`${API}/saved/savedTrip/${userData.userId}`, { credentials: "include"  });
           const data = await res.json();
           setTrips(data);
         } catch (err) {

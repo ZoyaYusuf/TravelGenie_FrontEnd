@@ -54,7 +54,8 @@ export default function Schedule({ tripId, tripName, days, startDate, scheduleDa
     try{  
         const res = await fetch(`${API}/Schedule/CreateTrip/:id`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" , "Authorization": `Bearer ${token}`  },
+        headers: { "Content-Type": "application/json"},
+        credentials: "include",
         body: JSON.stringify(ScheduleTrip),
          
         }); 

@@ -1,15 +1,21 @@
 import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 const API = import.meta.env.VITE_BACKEND_URL;
+import { useUser } from "./UserContext";
 
 export default function PublicRoute({ children }) {
     const [loading, setLoading] = useState(true);
     const [isAuth, setIsAuth] = useState(false);
-
+    const { userData, setUserData } = useUser();    
+    
     useEffect(() => {
         const checkAuth = async () => {
             try {
-            const res = await fetch(`${API}/auth/check`);
+            const res = await fetch(`${API}/auth/check`
+                , {
+                        credentials: "include"
+                    }
+            );
                 const data = await res.json();
                 setIsAuth(data.loggedIn === true);
             } catch {
@@ -25,5 +31,5 @@ export default function PublicRoute({ children }) {
     if (loading) return <div>Loading...</div>;
 
     // If user is logged in → prevent access to login/signup
-    return isAuth ? <Navigate to="/explore" /> : children;
+    return isAuth ? <Navigate to={`/explore/${userData.userId}`}  /> : children;
 }

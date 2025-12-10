@@ -4,8 +4,7 @@ import { useEffect } from 'react'
 import { useUser } from "../UserContext";
 import { useParams } from "react-router-dom";
 import SavedTrip from "../SaveTrip/SavedTrip";
-const API = import.meta.env.VITE_BACKEND_URL;
-const token = localStorage.getItem("token");
+const API = import.meta.env.VITE_BACKEND_URL; 
 
 export default function Explore(){
   const { id } = useParams();
@@ -17,8 +16,8 @@ export default function Explore(){
         try{
           await fetch(`${API}/explore/Explore/${userData.userId}`, { 
             method: "GET",
-            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}`  }, 
-             
+            headers: { "Content-Type": "application/json"}, 
+            credentials: "include",
           });  
         }catch (error) {
           console.error("Unable to display explore:", error);
@@ -40,7 +39,7 @@ export default function Explore(){
               </div>
           </div>
 
-          <SavedTrip/>
+          {/* <SavedTrip/> */}
         </div>
         </>
     )
