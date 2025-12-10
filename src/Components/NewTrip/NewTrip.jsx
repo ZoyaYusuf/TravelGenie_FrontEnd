@@ -6,6 +6,7 @@ import './NewTrip.css'
 import CoverImages from './CoverImages';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { newTripSchema } from "/src/validation/validationSchema";
+const token = localStorage.getItem("token");
  
 const API = import.meta.env.VITE_BACKEND_URL;
 export default function NewTrip(){
@@ -33,7 +34,7 @@ export default function NewTrip(){
     }
     const res = await fetch(`${API}/Create/newTrip/${userData.userId}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}`  },
       body: JSON.stringify(values),
     });
 

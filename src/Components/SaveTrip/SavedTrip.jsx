@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../UserContext";
 import Swal from "sweetalert2";
 const API = import.meta.env.VITE_BACKEND_URL;
+const token = localStorage.getItem("token");
 
 export default function savedTrip(){
     const [trips, setTrips] = useState([]);
@@ -37,6 +38,7 @@ const deleteSavedTrip = async (tripId, e) => {
       `${API}/saved/savedTrip/${userData.userId}/${tripId}`,
       {
         method: "DELETE", 
+        headers: { "Authorization": `Bearer ${token}`  },
       }
     );
 

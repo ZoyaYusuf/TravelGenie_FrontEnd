@@ -5,6 +5,7 @@ import { useUser } from "../UserContext";
 import { useParams } from "react-router-dom";
 import SavedTrip from "../SaveTrip/SavedTrip";
 const API = import.meta.env.VITE_BACKEND_URL;
+const token = localStorage.getItem("token");
 
 export default function Explore(){
   const { id } = useParams();
@@ -16,7 +17,7 @@ export default function Explore(){
         try{
           await fetch(`${API}/explore/Explore/${userData.userId}`, { 
             method: "GET",
-            headers: { "Content-Type": "application/json" }, 
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}`  }, 
              
           });  
         }catch (error) {
