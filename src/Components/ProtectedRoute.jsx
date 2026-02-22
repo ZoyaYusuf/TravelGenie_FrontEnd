@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {ScaleLoader} from "react-spinners";
 const API = import.meta.env.VITE_BACKEND_URL; 
 
 export default function ProtectedRoute() {
@@ -27,7 +28,7 @@ export default function ProtectedRoute() {
         checkAuth();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>
 
     return isAuth ? <Outlet /> : <Navigate to="/Login" />;
 }
