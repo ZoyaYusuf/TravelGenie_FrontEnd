@@ -28,7 +28,7 @@ export default function PublicRoute({ children }) {
         checkAuth();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>;
 
     // If user is logged in → prevent access to login/signup
     return isAuth ? <Navigate to={`/explore/${userData.userId}`}  /> : children;
