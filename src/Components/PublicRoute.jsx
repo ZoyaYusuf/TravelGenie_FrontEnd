@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 const API = import.meta.env.VITE_BACKEND_URL;
 import { useUser } from "./UserContext";
+import {ScaleLoader} from "react-spinners";
 
 export default function PublicRoute({ children }) {
     const [loading, setLoading] = useState(true);
