@@ -28,7 +28,14 @@ export default function ProtectedRoute() {
         checkAuth();
     }, []);
 
-    if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>
-
+    if (loading) {
+        return (
+            <div className="loader-container">
+            <ScaleLoader color="#3e6af8" loading={loading}/>
+            <br/>
+            <p>Loading....</p>
+            </div>
+        );
+    }
     return isAuth ? <Outlet /> : <Navigate to="/Login" />;
 }
