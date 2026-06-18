@@ -4,7 +4,7 @@ import {ScaleLoader} from "react-spinners";
 const API = import.meta.env.VITE_BACKEND_URL; 
 
 export default function ProtectedRoute() {
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [isAuth, setIsAuth] = useState(false);
 
     useEffect(() => {
@@ -20,13 +20,15 @@ export default function ProtectedRoute() {
                 setIsAuth(data.loggedIn === true);
             } catch (err) {
                 setIsAuth(false);
-            } 
+            } finally {
+                setLoading(false);
+            }
         };
 
         checkAuth();
     }, []);
 
-    // if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>
+    if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>
 
     return isAuth ? <Outlet /> : <Navigate to="/Login" />;
 }

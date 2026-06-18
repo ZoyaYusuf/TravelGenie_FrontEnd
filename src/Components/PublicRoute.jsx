@@ -5,7 +5,7 @@ import { useUser } from "./UserContext";
 import {ScaleLoader} from "react-spinners";
 
 export default function PublicRoute({ children }) {
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [isAuth, setIsAuth] = useState(false);
     const { userData, setUserData } = useUser();    
     
@@ -21,13 +21,15 @@ export default function PublicRoute({ children }) {
                 setIsAuth(data.loggedIn === true);
             } catch {
                 setIsAuth(false);
-            } 
+            } finally {
+                setLoading(false);
+            }
         };
 
         checkAuth();
     }, []);
 
-    // if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>;
+    if (loading) return <ScaleLoader color="#3e6af8" loading={loading}></ScaleLoader>;
 
     // If user is logged in → prevent access to login/signup
     return isAuth ? <Navigate to={`/explore/${userData.userId}`}  /> : children;
