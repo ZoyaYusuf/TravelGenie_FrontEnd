@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroVideo from './HeroVideo';
 import Features from './Features';
-// import Masonry from './Masonry'; 
 import Timeline from './CustomizedTimeline'
 import Footer from './Footer';
 import './HomePage.css'; // make sure CTA CSS is included here
