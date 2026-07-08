@@ -67,10 +67,10 @@ export default function Login() {
                         <Form className="form-box" id="loginBox">
                             <h2>Login</h2>
 
-                            <Field name="email" placeholder="Email" className="loginInput"/>
+                            <Field name="email" placeholder="Email (demo@gmail.com)" className="loginInput"/>
                             <ErrorMessage name="email" component="div" className="error" />
 
-                            <Field name="password" type="password" placeholder="Password" className="loginInput"/>
+                            <Field name="password" type="password" placeholder="Password (123456)" className="loginInput"/>
                             <ErrorMessage name="password" component="div" className="error"/>
 
                             {status && <div className="server-error">{status}</div>}
