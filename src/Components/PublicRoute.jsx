@@ -35,6 +35,7 @@ export default function PublicRoute({ children }) {
             <ScaleLoader color="#3e6af8" loading={loading}/>
             <br/>
             <p>Loading....</p>
+            <p>Please wait and refresh</p>
             </div>
         );
     }
